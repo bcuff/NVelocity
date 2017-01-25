@@ -267,7 +267,7 @@ namespace NVelocity.Util.Introspection {
 	/// upcasts every method to the nearest acccessible method.
 	/// </summary>
 	private static System.Reflection.MethodInfo[] getAccessibleMethods(System.Type clazz) {
-	    System.Reflection.MethodInfo[] methods = clazz.GetMethods();
+	    System.Reflection.MethodInfo[] methods = clazz.GetTypeInfo().GetMethods();
 
 
 	    // TODO:  the rest of this method is trying to determine what is supposed to be callable - I think .Net just returns what is callable
@@ -315,7 +315,7 @@ namespace NVelocity.Util.Introspection {
 	}
 
 	private static System.Reflection.PropertyInfo[] getAccessibleProperties(System.Type clazz) {
-	    System.Reflection.PropertyInfo[] properties = clazz.GetProperties();
+	    System.Reflection.PropertyInfo[] properties = clazz.GetTypeInfo().GetProperties();
 
 	    //TODO
 	    return properties;
@@ -431,7 +431,7 @@ namespace NVelocity.Util.Introspection {
 	    *  any interfaces, however nothing guarantees it will not in future.
 	    */
 
-	    System.Type[] interfaces = clazz.GetInterfaces();
+	    System.Type[] interfaces = clazz.GetTypeInfo().GetInterfaces();
 
 	    for (int i = interfaces.Length; i-- > 0; ) {
 		upcastCount = getAccessibleMethods(interfaces[i], methodInfos, upcastCount);
@@ -514,7 +514,7 @@ namespace NVelocity.Util.Introspection {
 
 	    if (clazz.GetTypeInfo().IsPublic) {
 		try {
-		    return clazz.GetMethod(name, (System.Type[]) paramTypes);
+		    return clazz.GetTypeInfo().GetMethod(name, (System.Type[]) paramTypes);
 		} catch (System.MethodAccessException e) {
 		    /*
 		    *  If the class does not have the method, then neither its
@@ -544,7 +544,7 @@ namespace NVelocity.Util.Introspection {
 	    *  and interfaces
 	    */
 
-	    System.Type[] interfaces = clazz.GetInterfaces();
+	    System.Type[] interfaces = clazz.GetTypeInfo().GetInterfaces();
 
 	    for (int i = 0; i < interfaces.Length; ++i) {
 		System.Reflection.MethodInfo interfaceMethod = getPublicMethod(interfaces[i], name, paramTypes);
@@ -573,7 +573,7 @@ namespace NVelocity.Util.Introspection {
 	    }
 
 	    internal void  tryUpcasting(System.Type clazz) {
-		method = clazz.GetMethod(name, (System.Type[]) parameterTypes);
+		method = clazz.GetTypeInfo().GetMethod(name, (System.Type[]) parameterTypes);
 		name = null;
 		parameterTypes = null;
 		upcast = true;

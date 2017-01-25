@@ -113,7 +113,7 @@ namespace NVelocity.App {
 	/// in the class we are methodizing.
 	/// </summary>
 	private void  inspect(Type clas) {
-	    FieldInfo[] fields = clas.GetFields();
+	    FieldInfo[] fields = clas.GetTypeInfo().GetFields();
 	    for (int i = 0; i < fields.Length; i++) {
 		/*
 		*  only if public and static

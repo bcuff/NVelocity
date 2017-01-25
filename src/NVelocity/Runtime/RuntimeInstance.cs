@@ -73,7 +73,9 @@ namespace NVelocity.Runtime {
     ///
     /// </version>
     public class RuntimeInstance : RuntimeConstants, RuntimeServices {
-	private DefaultTraceListener debugOutput = new DefaultTraceListener();
+#if NET45
+    private DefaultTraceListener debugOutput = new DefaultTraceListener();
+#endif
 
 	private void  InitBlock() {
 	    logSystem = new PrimordialLogSystem();
@@ -260,11 +262,13 @@ namespace NVelocity.Runtime {
 		configuration.Load(file.OpenRead());
 		info("Default Properties File: " + file.FullName);
 	    } catch (System.Exception ex) {
-		debugOutput.WriteLine("Cannot get NVelocity Runtime default properties!\n" + ex.Message);
+#if NET45
+                debugOutput.WriteLine("Cannot get NVelocity Runtime default properties!\n" + ex.Message);
 		debugOutput.Flush();
-	    }
+#endif
+            }
 
-	}
+        }
 
 	/// <summary> Allows an external system to set a property in
 	/// the Velocity Runtime.

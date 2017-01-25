@@ -1,12 +1,13 @@
 ﻿#if NETSTANDARD
 namespace System
 {
-    public class SystemException : Exception { }
+    internal class SerializableAttribute : Attribute { }
+    internal class SystemException : Exception { }
 }
 
 namespace System.IO
 {
-    public static class MemoryStreamExtensions
+    internal static class MemoryStreamExtensions
     {
         public static byte[] GetBuffer(this MemoryStream stream)
         {

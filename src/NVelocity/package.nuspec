@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>NVelocity-Netstandard</id>
+    <version>1.0.0</version>
+    <title>NVelocity NETStandard</title>
+    <authors>NVelocity</authors>
+    <licenseUrl>https://raw.githubusercontent.com/bcuff/NVelocity/master/LICENSE.txt</licenseUrl>
+    <projectUrl>https://github.com/bcuff/NVelocity</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>NVelocity port for NETStandard compatibility</description>
+    <releaseNotes></releaseNotes>
+    <copyright></copyright>
+    <tags>nvelocity</tags>
+    <dependencies>
+      <group targetFramework="netstandard1.6">
+        <dependency id="NETStandard.Library" version="1.6.0" />
+        <dependency id="System.Collections.NonGeneric" version="4.0.1" />
+        <dependency id="System.Data.Common" version="4.1.0" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="bin\Release\net45\NVelocity.dll" target="lib\net45\NVelocity.dll" />
+    <file src="bin\Release\netstandard1.6\NVelocity.dll" target="lib\netstandard1.6\NVelocity.dll" />
+  </files>
+</package>
