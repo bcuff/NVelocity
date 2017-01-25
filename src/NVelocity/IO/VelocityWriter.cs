@@ -294,8 +294,13 @@ namespace NVelocity.IO {
 	    clear();
 	}
 
-	// needed to extend TextWriter
-	public override Encoding Encoding {
+        public override void Write(char value)
+        {
+            write((int)value);
+        }
+
+        // needed to extend TextWriter
+        public override Encoding Encoding {
 	    get { return writer.Encoding; }
 	}
 

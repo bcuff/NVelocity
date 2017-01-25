@@ -2,14 +2,7 @@
 namespace NVelocity.Runtime.Parser {
     using System;
 
-    public class TokenMgrError:System.ApplicationException {
-	public override System.String Message
-	{
-	    get {
-		return base.Message;
-	    }
-
-	}
+    public class TokenMgrError:System.Exception {
 	/*
 	* Ordinals for various reasons why an Error of this type can be thrown.
 	*/

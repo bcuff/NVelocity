@@ -313,7 +313,7 @@ namespace Commons.Collections {
 		     */
 		    return ;
 		}
-		reader.Close();
+		reader.Dispose();
 	    }
 	}
 

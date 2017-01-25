@@ -26,8 +26,10 @@ namespace NVelocity {
 	    return element;
 	}
 
-	/*******************************/
-	public class TransactionManager {
+#if NET45
+
+        /*******************************/
+        public class TransactionManager {
 	    public static ConnectionHashTable manager = new ConnectionHashTable();
 
 	public class ConnectionHashTable:System.Collections.Hashtable {
@@ -136,6 +138,7 @@ namespace NVelocity {
 
 	    }
 	}
+#endif
 
 
 	/*******************************/
