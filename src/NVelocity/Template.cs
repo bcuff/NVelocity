@@ -118,7 +118,7 @@ namespace NVelocity {
 		    /*
 		    *  Make sure to close the inputstream when we are done.
 		    */
-		    is_Renamed.Close();
+		    is_Renamed.Dispose();
 		}
 	    } else {
 		/*

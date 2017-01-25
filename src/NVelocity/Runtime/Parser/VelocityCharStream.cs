@@ -106,7 +106,7 @@ namespace NVelocity.Runtime.Parser {
 		    maxNextCharInd = (bufpos -= tokenBegin);
 		}
 	    } catch (System.Exception t) {
-		throw new System.ApplicationException(t.Message);
+		throw new System.Exception(t.Message);
 	    }
 
 
@@ -144,7 +144,7 @@ namespace NVelocity.Runtime.Parser {
 		    throw new System.IO.IOException("exception reading from inputStream", ex);
 		}
 		if (i <= 0) {
-		    inputStream.Close();
+		    inputStream.Dispose();
 		    throw new System.IO.IOException();
 		} else
 		    maxNextCharInd += i;

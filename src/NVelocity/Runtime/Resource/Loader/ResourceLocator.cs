@@ -34,16 +34,18 @@ namespace NVelocity.Runtime.Resource.Loader {
 		// the Calling, Executing and Entry assemblies may not have links to each other -
 		// so attempt to get assemblies from all possible paths.  The current AppDomain may also
 		// know of more assemblies.
-		GetReferencedAssemblies(System.Reflection.Assembly.GetExecutingAssembly(), assemblies);
+		GetReferencedAssemblies(typeof(ResourceLocator).GetTypeInfo().Assembly, assemblies);
 		if (System.Reflection.Assembly.GetEntryAssembly() != null) {
 		    GetReferencedAssemblies(System.Reflection.Assembly.GetEntryAssembly(), assemblies);
 		}
+#if NET45
 		if (System.Reflection.Assembly.GetCallingAssembly() != null) {
 		    GetReferencedAssemblies(System.Reflection.Assembly.GetCallingAssembly(), assemblies);
 		}
 		foreach(Assembly assembly in AppDomain.CurrentDomain.GetAssemblies()) {
 		    GetReferencedAssemblies(assembly, assemblies);
 		}
+#endif
 
 		String fn = filename.ToLower().Replace(".\\", "");
 		fn = fn.Replace("\\", ".");

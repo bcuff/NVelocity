@@ -280,7 +280,7 @@ namespace NVelocity.Util.Introspection {
 
 	    //UPGRADE_TODO: Method java.lang.reflect.Modifier.isPublic was not converted. 'ms-help://MS.VSCC/commoner/redir/redirect.htm?keyword="jlca1095"'
 	    //UPGRADE_ISSUE: Method 'java.lang.Class.getModifiers' was not converted. 'ms-help://MS.VSCC/commoner/redir/redirect.htm?keyword="jlca1000_javalangClassgetModifiers"'
-	    if (clazz.IsPublic) {
+	    if (clazz.GetTypeInfo().IsPublic) {
 		return methods;
 	    }
 
@@ -324,7 +324,7 @@ namespace NVelocity.Util.Introspection {
 	    *  Short circuit for the (hopefully) majority of cases where the
 	    *  clazz is public
 	    */
-	    if (clazz.IsPublic) {
+	    if (clazz.GetTypeInfo().IsPublic) {
 		return properties;
 	    }
 
@@ -381,7 +381,7 @@ namespace NVelocity.Util.Introspection {
 
 	    //UPGRADE_TODO: Method java.lang.reflect.Modifier.isPublic was not converted. 'ms-help://MS.VSCC/commoner/redir/redirect.htm?keyword="jlca1095"'
 	    //UPGRADE_ISSUE: Method 'java.lang.Class.getModifiers' was not converted. 'ms-help://MS.VSCC/commoner/redir/redirect.htm?keyword="jlca1000_javalangClassgetModifiers"'
-	    if (clazz.IsPublic) {
+	    if (clazz.GetTypeInfo().IsPublic) {
 		for (int i = 0; i < l && upcastCount < l; ++i) {
 		    try {
 			MethodInfo methodInfo = methodInfos[i];
@@ -411,7 +411,7 @@ namespace NVelocity.Util.Introspection {
 	    *   Examine superclass
 	    */
 
-	    System.Type superclazz = clazz.BaseType;
+	    System.Type superclazz = clazz.GetTypeInfo().BaseType;
 
 	    if (superclazz != null) {
 		upcastCount = getAccessibleMethods(superclazz, methodInfos, upcastCount);
@@ -470,7 +470,7 @@ namespace NVelocity.Util.Introspection {
 	    *   class is public.
 	    */
 
-	    if (clazz.IsPublic) {
+	    if (clazz.GetTypeInfo().IsPublic) {
 		return method;
 	    }
 
@@ -487,7 +487,7 @@ namespace NVelocity.Util.Introspection {
 	    *   Short circuit for (hopefully the majority of) cases where the declaring
 	    *   class is public.
 	    */
-	    if (clazz.IsPublic) {
+	    if (clazz.GetTypeInfo().IsPublic) {
 		return property;
 	    }
 
@@ -512,7 +512,7 @@ namespace NVelocity.Util.Introspection {
 	    *  if this class is public, then try to get it
 	    */
 
-	    if (clazz.IsPublic) {
+	    if (clazz.GetTypeInfo().IsPublic) {
 		try {
 		    return clazz.GetMethod(name, (System.Type[]) paramTypes);
 		} catch (System.MethodAccessException e) {
@@ -530,7 +530,7 @@ namespace NVelocity.Util.Introspection {
 	    */
 
 
-	    System.Type superclazz = clazz.BaseType;
+	    System.Type superclazz = clazz.GetTypeInfo().BaseType;
 
 	    if (superclazz != null) {
 		System.Reflection.MethodInfo superclazzMethod = getPublicMethod(superclazz, name, paramTypes);

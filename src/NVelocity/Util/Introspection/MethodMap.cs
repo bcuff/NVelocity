@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Reflection;
 
 namespace NVelocity.Util.Introspection {
 
@@ -174,7 +175,7 @@ namespace NVelocity.Util.Introspection {
 		System.Type setclass = set
 					   [i].GetType();
 
-		if (!base_Renamed[i].IsAssignableFrom(set
+		if (!base_Renamed[i].GetTypeInfo().IsAssignableFrom(set
 						      [i].GetType()))
 		    return null;
 
@@ -189,7 +190,7 @@ namespace NVelocity.Util.Introspection {
 		    * is this a valid step?
 		    */
 
-		    if (!base_Renamed[i].IsAssignableFrom(c)) {
+		    if (!base_Renamed[i].GetTypeInfo().IsAssignableFrom(c)) {
 			/*
 			*  it stopped being assignable - therefore we are looking at
 			*  an interface as our target, so move back one step
@@ -206,7 +207,7 @@ namespace NVelocity.Util.Introspection {
 			break;
 		    }
 
-		    c = c.BaseType;
+		    c = c.GetTypeInfo().BaseType;
 		    twonk.distance++;
 		    twonk.vec[i]++;
 		}

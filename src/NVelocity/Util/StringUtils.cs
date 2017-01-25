@@ -1,4 +1,5 @@
 using System;
+using System.IO;
 using System.Collections;
 using NVelocity;
 
@@ -411,14 +412,16 @@ namespace NVelocity.Util {
 		tmpBool = System.IO.Directory.Exists(f.FullName);
 	    if (tmpBool) {
 		try {
-		    System.IO.StreamReader fr = new System.IO.StreamReader(f.FullName);
-		    char[] template = new char[(int) SupportClass.FileLength(f)]
-		    ;
-		    fr.Read((System.Char[]) template, 0, template.Length)
-		    ;
-		    contents = new String(template)
-		    ;
-		    fr.Close();
+                    using (var fs = System.IO.File.OpenRead(f.FullName))
+                    using (System.IO.StreamReader fr = new System.IO.StreamReader(fs))
+                    {
+                        char[] template = new char[(int)SupportClass.FileLength(f)]
+                        ;
+                        fr.Read((System.Char[])template, 0, template.Length)
+                        ;
+                        contents = new String(template)
+                        ;
+                    }
 		} catch (System.Exception e) {
 		    System.Console.Out.WriteLine(e);
 		    SupportClass.WriteStackTrace(e, Console.Error);

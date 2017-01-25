@@ -307,9 +307,11 @@ namespace NVelocity {
 		}
 	    }
 
-	    public static System.Globalization.CultureInfo[] GetAvailableCultures() {
+#if NET45
+        public static System.Globalization.CultureInfo[] GetAvailableCultures() {
 		return System.Globalization.CultureInfo.GetCultures(System.Globalization.CultureTypes.AllCultures);
 	    }
+#endif
 
 	    public override int GetHashCode() {
 		return this.GetHashCode();

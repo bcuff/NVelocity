@@ -259,14 +259,14 @@ label_1_brk:
 
 		}
 		if (true)
-		    throw (System.ApplicationException) jjte000;
+		    throw (System.Exception) jjte000;
 
 	    } finally {
 		if (jjtc000) {
 		    jjtree.closeNodeScope(jjtn000, true);
 		}
 	    }
-	    throw new System.ApplicationException("Missing return statement in function");
+	    throw new System.Exception("Missing return statement in function");
 	}
 
 	/// <summary> These are the types of statements that
@@ -726,7 +726,7 @@ label_4_brk:
 			}
 		    } {
 			if (true)
-			    throw (System.ApplicationException) jjte001;
+			    throw (System.Exception) jjte001;
 		    }
 		} finally {
 		    if (jjtc001) {
@@ -773,14 +773,14 @@ label_4_brk:
 		    }
 		} {
 		    if (true)
-			throw (System.ApplicationException) jjte000;
+			throw (System.Exception) jjte000;
 		}
 	    } finally {
 		if (jjtc000) {
 		    jjtree.closeNodeScope(jjtn000, true);
 		}
 	    }
-	    throw new System.ApplicationException("Missing return statement in function");
+	    throw new System.Exception("Missing return statement in function");
 	}
 
 	public void  ObjectArray() {
@@ -840,7 +840,7 @@ label_5_brk:
 		    }
 		} {
 		    if (true)
-			throw (System.ApplicationException) jjte000;
+			throw (System.Exception) jjte000;
 		}
 	    } finally {
 		if (jjtc000) {
@@ -955,7 +955,7 @@ label_5_brk:
 		    }
 		} {
 		    if (true)
-			throw (System.ApplicationException) jjte000;
+			throw (System.Exception) jjte000;
 		}
 	    } finally {
 		if (jjtc000) {
@@ -1097,7 +1097,7 @@ label_6_brk:
 		    }
 		} {
 		    if (true)
-			throw (System.ApplicationException) jjte000;
+			throw (System.Exception) jjte000;
 		}
 	    } finally {
 		if (jjtc000) {
@@ -1204,7 +1204,7 @@ label_8_brk:
 		    }
 		} {
 		    if (true)
-			throw (System.ApplicationException) jjte000;
+			throw (System.Exception) jjte000;
 		}
 	    } finally {
 		if (jjtc000) {
@@ -1369,7 +1369,7 @@ label_9_brk:
 			}
 		    } {
 			if (true)
-			    throw (System.ApplicationException) jjte001;
+			    throw (System.Exception) jjte001;
 		    }
 		} finally {
 		    if (jjtc001) {
@@ -1434,7 +1434,7 @@ label_10_brk:
 		    }
 		} {
 		    if (true)
-			throw (System.ApplicationException) jjte000;
+			throw (System.Exception) jjte000;
 		}
 	    } finally {
 		if (jjtc000) {
@@ -1492,7 +1492,7 @@ label_11_brk:
 			}
 		    } {
 			if (true)
-			    throw (System.ApplicationException) jjte001;
+			    throw (System.Exception) jjte001;
 		    }
 		} finally {
 		    if (jjtc001) {
@@ -1517,7 +1517,7 @@ label_11_brk:
 		    }
 		} {
 		    if (true)
-			throw (System.ApplicationException) jjte000;
+			throw (System.Exception) jjte000;
 		}
 	    } finally {
 		if (jjtc000) {
@@ -1589,7 +1589,7 @@ label_12_brk:
 			}
 		    } {
 			if (true)
-			    throw (System.ApplicationException) jjte001;
+			    throw (System.Exception) jjte001;
 		    }
 		} finally {
 		    if (jjtc001) {
@@ -1614,7 +1614,7 @@ label_12_brk:
 		    }
 		} {
 		    if (true)
-			throw (System.ApplicationException) jjte000;
+			throw (System.Exception) jjte000;
 		}
 	    } finally {
 		if (jjtc000) {
@@ -1677,7 +1677,7 @@ label_12_brk:
 		    }
 		} {
 		    if (true)
-			throw (System.ApplicationException) jjte000;
+			throw (System.Exception) jjte000;
 		}
 	    } finally {
 		if (jjtc000) {
@@ -1741,7 +1741,7 @@ case ParserConstants.LBRACKET: case ParserConstants.LPAREN: case ParserConstants
 		    }
 		} {
 		    if (true)
-			throw (System.ApplicationException) jjte000;
+			throw (System.Exception) jjte000;
 		}
 	    } finally {
 		if (jjtc000) {
@@ -1778,7 +1778,7 @@ case ParserConstants.LBRACKET: case ParserConstants.LPAREN: case ParserConstants
 		    }
 		} {
 		    if (true)
-			throw (System.ApplicationException) jjte000;
+			throw (System.Exception) jjte000;
 		}
 	    } finally {
 		if (jjtc000) {
@@ -1826,7 +1826,7 @@ case ParserConstants.LBRACKET: case ParserConstants.LPAREN: case ParserConstants
 			}
 		    } {
 			if (true)
-			    throw (System.ApplicationException) jjte001;
+			    throw (System.Exception) jjte001;
 		    }
 		} finally {
 		    if (jjtc001) {
@@ -1879,7 +1879,7 @@ label_13_brk:
 			}
 		    } {
 			if (true)
-			    throw (System.ApplicationException) jjte001;
+			    throw (System.Exception) jjte001;
 		    }
 		} finally {
 		    if (jjtc001) {
@@ -1934,7 +1934,7 @@ label_14_brk:
 				}
 			    } {
 				if (true)
-				    throw (System.ApplicationException) jjte001;
+				    throw (System.Exception) jjte001;
 			    }
 			} finally {
 			    if (jjtc001) {
@@ -1969,7 +1969,7 @@ label_14_brk:
 				}
 			    } {
 				if (true)
-				    throw (System.ApplicationException) jjte002;
+				    throw (System.Exception) jjte002;
 			    }
 			} finally {
 			    if (jjtc002) {
@@ -2032,7 +2032,7 @@ label_15_brk:
 				}
 			    } {
 				if (true)
-				    throw (System.ApplicationException) jjte001;
+				    throw (System.Exception) jjte001;
 			    }
 			} finally {
 			    if (jjtc001) {
@@ -2067,7 +2067,7 @@ label_15_brk:
 				}
 			    } {
 				if (true)
-				    throw (System.ApplicationException) jjte002;
+				    throw (System.Exception) jjte002;
 			    }
 			} finally {
 			    if (jjtc002) {
@@ -2102,7 +2102,7 @@ label_15_brk:
 				}
 			    } {
 				if (true)
-				    throw (System.ApplicationException) jjte003;
+				    throw (System.Exception) jjte003;
 			    }
 			} finally {
 			    if (jjtc003) {
@@ -2137,7 +2137,7 @@ label_15_brk:
 				}
 			    } {
 				if (true)
-				    throw (System.ApplicationException) jjte004;
+				    throw (System.Exception) jjte004;
 			    }
 			} finally {
 			    if (jjtc004) {
@@ -2200,7 +2200,7 @@ label_16_brk:
 				}
 			    } {
 				if (true)
-				    throw (System.ApplicationException) jjte001;
+				    throw (System.Exception) jjte001;
 			    }
 			} finally {
 			    if (jjtc001) {
@@ -2235,7 +2235,7 @@ label_16_brk:
 				}
 			    } {
 				if (true)
-				    throw (System.ApplicationException) jjte002;
+				    throw (System.Exception) jjte002;
 			    }
 			} finally {
 			    if (jjtc002) {
@@ -2298,7 +2298,7 @@ label_17_brk:
 				}
 			    } {
 				if (true)
-				    throw (System.ApplicationException) jjte001;
+				    throw (System.Exception) jjte001;
 			    }
 			} finally {
 			    if (jjtc001) {
@@ -2333,7 +2333,7 @@ label_17_brk:
 				}
 			    } {
 				if (true)
-				    throw (System.ApplicationException) jjte002;
+				    throw (System.Exception) jjte002;
 			    }
 			} finally {
 			    if (jjtc002) {
@@ -2368,7 +2368,7 @@ label_17_brk:
 				}
 			    } {
 				if (true)
-				    throw (System.ApplicationException) jjte003;
+				    throw (System.Exception) jjte003;
 			    }
 			} finally {
 			    if (jjtc003) {
@@ -2428,7 +2428,7 @@ label_18_brk:
 			}
 		    } {
 			if (true)
-			    throw (System.ApplicationException) jjte001;
+			    throw (System.Exception) jjte001;
 		    }
 		} finally {
 		    if (jjtc001) {

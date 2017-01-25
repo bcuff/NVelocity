@@ -522,7 +522,7 @@ namespace NVelocity.Runtime.Resource {
 		    */
 		    if (is_Renamed != null) {
 			try {
-			    is_Renamed.Close();
+			    is_Renamed.Dispose();
 			} catch (System.IO.IOException ioe) {}}
 		}
 	    }
